@@ -34,10 +34,10 @@ public:
 				strides[i] = stride;
 				stride *= dims[i];
 			}
-			for(int i=0; i<dims.size(); i++){
-				cout << strides[i] << " ";
-			}
-			cout << endl;
+			// for(int i=0; i<dims.size(); i++){
+			// 	cout << strides[i] << " ";
+			// }
+			// cout << endl;
 		}
 		data_buffer_size = num_elements * sizeof(T);
 		init(dims);
@@ -118,7 +118,7 @@ private:
 	}
     // recompose n/2 data into finer level (n) with hierarchical basis (pure interpolation)
 	void recompose_level_1D(T * data_pos, size_t n, T h, bool nodal_row=true){
-		cerr << n << endl;
+		// cerr << n << endl;
 		size_t n_nodal = (n >> 1) + 1;
 		size_t n_coeff = n - n_nodal;
 		memcpy(data_buffer, data_pos, n*sizeof(T));
@@ -133,7 +133,7 @@ private:
 	}
     // recompose n/2 data into finer level (n) with hierarchical basis (pure interpolation)
     void recompose_level_1D_hierarhical_basis(T * data_pos, size_t n, T h, bool nodal_row=true){
-        cerr << n << endl;
+        // cerr << n << endl;
         size_t n_nodal = (n >> 1) + 1;
         size_t n_coeff = n - n_nodal;
         memcpy(data_buffer, data_pos, n*sizeof(T));
@@ -144,7 +144,7 @@ private:
     }
     void recompose_level_1D_cubic(T * data_pos, size_t n, T h, bool nodal_row=true)
     {
-        cerr << n << endl;
+        // cerr << n << endl;
         size_t n_nodal = (n >> 1) + 1;
         size_t n_coeff = n - n_nodal;
         memcpy(data_buffer, data_pos, n*sizeof(T));
